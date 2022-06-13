@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: internet-banking-notification-service
+  rabbitmq:
+    host: localhost
+    password: guest
+    port: 15672
+    username: guest
+    exchange: user.exchange
+    queue: user.queue
+    routingKey: user.routingkey
+
+info:
+  app:
+    name: ${spring.application.name}
+
+server:
+  port: 9096
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9091/eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
